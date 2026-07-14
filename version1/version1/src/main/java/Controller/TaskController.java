@@ -18,7 +18,7 @@ import Models.Task;
 @CrossOrigin
 public class TaskController {
 	@Autowired
-	private Service service;
+	private final  Service service;
 	
 	@GetMapping("/")
 	public String testing() {
