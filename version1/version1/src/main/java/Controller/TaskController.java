@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import Services.TaskService;
 import Models.Task;
 
 @RestController
@@ -18,7 +18,7 @@ import Models.Task;
 @CrossOrigin
 public class TaskController {
 	@Autowired
-	private final  Service service;
+	private  TaskService ser;
 	
 	@GetMapping("/")
 	public String testing() {
@@ -30,7 +30,7 @@ public class TaskController {
 		public ResponseEntity<List<Task>> getallTasks(){
 		
 		
-		return new ResponseEntity<>(service.getTasks(), HttpStatus.OK);
+		return new ResponseEntity<>(ser.getTasks(), HttpStatus.OK);
 
 }
 }
