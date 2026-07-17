@@ -1,12 +1,13 @@
-package Services;
-
+package com.Taskmangemet.version1.Services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import Models.Task;
-import Repository.TaskRepository;
+import com.Taskmangemet.version1.Models.Task;
+import com.Taskmangemet.version1.Repository.TaskRepository;
+
+
 @Service
 public class TaskService {
 	@Autowired
@@ -16,6 +17,12 @@ public class TaskService {
 		
 		
 		return repo.findAll();
+	}
+
+	public Task addTask(Task task) {
+		Task savedTask= repo.save(task);
+		
+		return savedTask;
 	}
 
 }

@@ -3,7 +3,7 @@ package com.Taskmangemet.version1;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.Taskmangemet.version1", "controller"})
 public class Version1Application {
 
 	public static void main(String[] args) {

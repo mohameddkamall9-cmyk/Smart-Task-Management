@@ -1,10 +1,12 @@
-package Models;
-
+package com.Taskmangemet.version1.Models;
 
 import java.time.LocalDateTime;
 
-import Enums.PRIO;
-import Enums.Status;
+import org.hibernate.annotations.CreationTimestamp;
+
+import com.Taskmangemet.version1.Enums.PRIO;
+import com.Taskmangemet.version1.Enums.Status;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -22,7 +24,7 @@ import lombok.NoArgsConstructor;
 public class Task {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
-private int id;
+private Integer id;
 private String title;
 private String description;
 @Enumerated(EnumType.STRING)
@@ -30,6 +32,7 @@ private PRIO priority;
 @Enumerated(EnumType.STRING)
 private Status status;
 
+@CreationTimestamp
 private LocalDateTime creationDate;
 private LocalDateTime dueDateTime; 
 private LocalDateTime updatedTime;
